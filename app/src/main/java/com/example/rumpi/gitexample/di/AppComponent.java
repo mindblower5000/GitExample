@@ -1,0 +1,16 @@
+package com.example.rumpi.gitexample.di;
+
+
+import com.example.rumpi.gitexample.data.usecases.RepoUsecases;
+import com.example.rumpi.gitexample.presenter.repo.RepoPresenter;
+import dagger.Component;
+import javax.inject.Singleton;
+
+@Singleton
+@Component(modules={DaggerNetModule.class, RepoUsecasesModule.class})
+public interface AppComponent {
+    RepoUsecases repoUsecases();
+
+    void injectsToRepoPresenter(RepoPresenter presenter);
+}
+
